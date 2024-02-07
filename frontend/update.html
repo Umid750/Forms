@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+</head>
+<body>
+    <form action="editrecord/{{post.id}}" method="POST">
+        {% csrf_token %}
+        <input type="text" name = 'name' value = "{{post.name}}">
+        <input type="text" name = 'company' value = "{{post.company}}">
+        <input type="text" name = 'price' value = "{{post.price}}">
+        <input type="text" name = 'category' value = "{{post.category}}">
+        <input type="text" name = 'date' value = "{{post.date}}">
+        <input type="text" name = 'image' value = "{{post.image}}">
+        <button type="submit">Saqlash</button>
+    </form>
+</body>
+</html>

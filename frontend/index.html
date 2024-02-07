@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>
+            Products list
+        </h1>
+        <a href="{% url 'add' %}">
+            <button>Yaratish</button>
+        </a>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Company
+                    </th>
+                    <th>
+                        Category
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                    <th>
+                        Date
+                    </th>
+                    <th>
+                        Image
+                    </th>
+                    <th>
+                        Delete
+                    </th>
+                    <th>
+                        Update
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in data %}
+                <tr>
+                    <td>
+                        {{product.id}}
+                    </td>
+                    <td>
+                        {{product.name}}
+                    </td>
+                    <td>
+                        {{product.company}}
+                    </td>
+                    <td>
+                        {{product.category}}
+                    </td>
+                    <td>
+                        {{product.price}}
+                    </td>
+                    <td>
+                        {{product.date}}
+                    </td>
+                    <td>
+                        <img src="{{product.image}}" width="150" height="150" alt="Image">
+                    </td>
+                    <td>
+                        <a href="/delete/{{product.id}}">
+                        <i class="fa fa-times fa_custom fa-3x"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="/edit/{{post.id}}">
+                            <i class="fa fa-edit"></i>
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </center>
+</body>
+</html>
